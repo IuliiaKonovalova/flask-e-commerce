@@ -1,6 +1,22 @@
-from flask import Flask, render_template
+import os
+from flask import (
+    Flask, flash, render_template, redirect, request, session, url_for
+)
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
+if os.path.exists("env.py"):
+    import env
+
+
 
 app = Flask(__name__)
+
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
+
+mongo = PyMongo(app)
 
 
 @app.route('/')
@@ -8,9 +24,6 @@ app = Flask(__name__)
 def home_page():
     return render_template('home.html')
 
-# @app.route('/about/<username>')
-# def about_page(username):
-#     return f'<h1>This is the About Page {username}</h1>'
 
 @app.route('/market')
 def market_page():
@@ -20,3 +33,9 @@ def market_page():
         {'id': 3, 'name': 'Keyboard', 'barcode': '231985128446', 'price': 150}
     ]
     return render_template('market.html', items=items)
+
+
+if __name__ == "__main__":
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
