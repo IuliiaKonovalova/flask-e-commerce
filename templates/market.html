@@ -18,7 +18,7 @@
     {% for item in items %}
     <tr>
       <td>{{ item.id }}</td>
-      <td>{{ item.name }}</td>
+      <td>{{ item.name[0]|upper }}{{ item.name[1:] }}</td>
       <td>{{ item.barcode }}</td>
       <td>{{ item.price }}$</td>
       <td>
