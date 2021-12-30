@@ -11,3 +11,7 @@ def home_page():
 # @app.route('/about/<username>')
 # def about_page(username):
 #     return f'<h1>This is the About Page {username}</h1>'
+
+@app.route('/market')
+def market_page():
+  return render_template('market.html', item_name="Phone")
