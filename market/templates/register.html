@@ -2,30 +2,55 @@
 {% block content %}
 
 
-<h1 class="h3 mb-3 font-weight-normal text-center">
-  Please Create your Account
-</h1>
-<div class="row">
-  <form method="POST" class="form-register text-center" style="color:white">
-    {{ form.hidden_tag() }}
+<section id="cover">
+  <div id="cover-caption">
+    <div id="container" class="container">
+      <div class="row">
+        <div class="col-sm-10 offset-sm-1 text-center">
+          <h1 class="display-3 "> Please Create your Account</h1>
+          <div class="info-form">
+            <form method="POST" class="form-register" style="color:white">
+              {{ form.hidden_tag() }}
+              <div class="form-group ">
+                <br>
+                <label for="exampleInputEmail1" class="col-sm-3 ">
+                  {{ form.username.label() }}
+                </label>
+                <div class="col-sm-4 centered_input">
+                  {{ form.username(class="form-control", placeholder="User Name") }}
+                </div>
+                <label for="exampleInputEmail1" class="col-sm-3">
+                  {{ form.email_address.label() }}
+                </label>
+                <div class="col-sm-4 centered_input">
+                  {{ form.email_address(class="form-control", placeholder="Email Address") }}
+                </div>
+                <label for="exampleInputEmail1" class="col-sm-3">
+                  {{ form.password1.label() }}
+                </label>
+                <div class="col-sm-4 centered_input">
+                  {{ form.password1(class="form-control", placeholder="Password") }}
+                </div>
+                <label for="exampleInputEmail1" class="col-sm-3">
+                  {{ form.password2.label() }}
+                </label>
+                <div class="col-sm-4 centered_input">
+                  {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+                </div>
 
-    <br>
-    {{ form.username.label() }}
-    {{ form.username(class="form-control", placeholder="User Name") }}
+                <br>
+                <div class="col-sm-4 centered_register">
+                  {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                </div>
+              </div>
+            </form>
+          </div>
+          <br>
 
-    {{ form.email_address.label() }}
-    {{ form.email_address(class="form-control", placeholder="Email Address") }}
-
-    {{ form.password1.label() }}
-    {{ form.password1(class="form-control", placeholder="Password") }}
-
-    {{ form.password2.label() }}
-    {{ form.password2(class="form-control", placeholder="Confirm Password") }}
-
-    <br>
-
-    {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
-
-  </form>
-</div>
+          <a href="#nav-main" class="btn btn-secondary-outline btn-sm" role="button">↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

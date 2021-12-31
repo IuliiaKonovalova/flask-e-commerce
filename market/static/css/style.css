@@ -2,3 +2,13 @@ body {
   background-color: #024e06;
   color: #fafafa;
 }
+
+.centered_input {
+  margin: 0 auto;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+
+.centered_register {
+  margin: 0 auto;
+}
