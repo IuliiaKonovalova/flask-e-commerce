@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Register Form Page</h1>
 
 
-<div class="container">
-  <form method="POST" class="form-register" style="color:white">
-    <img class="mb-4"
-      src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="">
-    <h1 class="h3 mb-3 font-weight-normal">
-      Please Create your Account
-    </h1>
+<h1 class="h3 mb-3 font-weight-normal text-center">
+  Please Create your Account
+</h1>
+<div class="row">
+  <form method="POST" class="form-register text-center" style="color:white">
+
     <br>
     {{ form.username.label() }}
     {{ form.username(class="form-control", placeholder="User Name") }}
