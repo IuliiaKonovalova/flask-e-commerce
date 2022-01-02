@@ -20,3 +20,17 @@ body {
 .title_home {
   padding-bottom: 2rem;
 }
+
+.btn_home {
+  background-color: rgb(88, 88, 247);
+  margin: 1em;
+  color: #fafafa;
+  font-size: 1.5rem;
+  padding: 0.4em 0.7em;
+  border-radius: 0.3em;
+}
+
+.incentive {
+  font-size: 1.5rem;
+  color: #fafafa9c;
+}
