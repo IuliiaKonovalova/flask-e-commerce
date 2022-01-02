@@ -9,7 +9,7 @@
         <div class="col-sm-10 offset-sm-1 text-center">
           <h1 class="display-3 ">Login Page</h1>
           <div class="info-form">
-            <form method="POST" class="form-register" style="color:white">
+            <form method="POST" class="form-signin" style="color:white">
               {{ form.hidden_tag() }}
               <div class="form-group ">
                 <br>
@@ -19,23 +19,12 @@
                 <div class="col-sm-4 centered_input">
                   {{ form.username(class="form-control", placeholder="User Name") }}
                 </div>
+
                 <label for="exampleInputEmail1" class="col-sm-3">
-                  {{ form.email_address.label() }}
+                  {{ form.password.label() }}
                 </label>
                 <div class="col-sm-4 centered_input">
-                  {{ form.email_address(class="form-control", placeholder="Email Address") }}
-                </div>
-                <label for="exampleInputEmail1" class="col-sm-3">
-                  {{ form.password1.label() }}
-                </label>
-                <div class="col-sm-4 centered_input">
-                  {{ form.password1(class="form-control", placeholder="Password") }}
-                </div>
-                <label for="exampleInputEmail1" class="col-sm-3">
-                  {{ form.password2.label() }}
-                </label>
-                <div class="col-sm-4 centered_input">
-                  {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+                  {{ form.password(class="form-control", placeholder="Password") }}
                 </div>
 
                 <br>
@@ -46,9 +35,12 @@
             </form>
           </div>
           <br>
-
           <a href="#nav-main" class="btn btn-secondary-outline btn-sm" role="button">↓</a>
         </div>
+      </div>
+      <div class="checkbox mb-3 text-center">
+        <h6>New here?</h6>
+        <a href="{{ url_for('register_page') }}" class="btn btn-sm btn-secondary">Register</a>
       </div>
     </div>
   </div>
