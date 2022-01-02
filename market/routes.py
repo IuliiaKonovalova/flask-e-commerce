@@ -30,4 +30,10 @@ def register_page():
     if form.errors != {}:
         for err_msg in form.errors.value():
             flash(f'There was an error with creating a user: {err_msg}', category='danger')
+    
     return render_template('register.html', form=form)
+
+
+@app.route('/login', methods=["GET", "POST"])
+def login_page():
+    return render_template('login_page.html')
