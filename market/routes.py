@@ -17,7 +17,7 @@ def market_page():
     return render_template('market.html', items=items)
 
 
-@app.route('/register', methods=["GET", "POST"])
+@app.route('/register', methods=['GET', 'POST'])
 def register_page():
     form = RegisterForm()
     if form.validate_on_submit():
@@ -26,7 +26,7 @@ def register_page():
             password_hash = form.password1.data)
         db.session.add(user_to_create)
         db.session.commit()
-        return redirect(url_for("market_page"))
+        return redirect(url_for('market_page'))
     if form.errors != {}:
         for err_msg in form.errors.value():
             flash(f'There was an error with creating a user: {err_msg}', category='danger')

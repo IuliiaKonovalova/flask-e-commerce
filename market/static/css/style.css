@@ -12,3 +12,11 @@ body {
 .centered_register {
   margin: 0 auto;
 }
+
+.faded_bg {
+  padding: 3rem;
+}
+
+.title_home {
+  padding-bottom: 2rem;
+}
