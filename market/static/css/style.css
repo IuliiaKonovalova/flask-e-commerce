@@ -54,3 +54,7 @@ a:active {
   color: #fafafa;
   letter-spacing: 0.5;
 }
+
+.modal-content {
+  background-color: #212121
+}
